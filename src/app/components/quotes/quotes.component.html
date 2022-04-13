@@ -1,0 +1,22 @@
+<app-spinner [isMostrar]="isCargando" [texto]="'Recuperando informacion'" *ngIf="listQuotes.length===0" ></app-spinner>
+
+<div class="row row-cols-1 row-cols-md-5 g-2">
+    <div class="col" *ngFor="let quote of listQuotes">
+        <div class="card " >
+            <div class="card-header">
+                Frase {{quote.quote_id}}
+            </div>
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p> {{quote.quote}} </p>
+                    <footer class="blockquote-footer">{{quote.author}} en <cite title="Source Title">{{quote.series}}</cite>
+                    </footer>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+  
+</div>
+
+
+

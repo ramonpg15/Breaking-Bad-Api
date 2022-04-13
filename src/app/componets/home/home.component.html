@@ -1,0 +1,29 @@
+<app-spinner [isMostrar]="isCargando" [texto]="'Recuperando informacion'" *ngIf="listCharacteres.length===0" ></app-spinner>
+
+<div class="row row-cols-1 row-cols-md-5 m-1">
+  <div class="col mb-4" *ngFor="let character of listCharacteres">
+    <div class="card h-100">
+      <img [src]="character.img" class="card-img-top" alt="...">
+      <div class="card-body">
+        <div class="d-flex justify-content-evenly align-items-center">
+          <span>
+            {{character.name}} <small class="badge bg-success"> {{character.nickname}} </small>
+          </span>
+        </div>
+        <div class="d-flex justify-content-evenly align-items-center mt-3">
+          <span [ngClass]="character.birthday==='Unknown'?'badge bg-danger':'badge bg-success'">
+            Cumpleaños:{{character.birthday}}
+          </span>
+        </div>
+
+        <!--  <p [ngClass]="{'badge bg-success':character.birthday!=='Unknown','badge bg-danger':character.birthday==='Unknown'}" >
+          {{character.birthday}}
+        </p> -->
+
+      </div>
+      <div class="card-footer">
+        <small class="text-center text-muted">Temporadas en las que aparece: {{character.appearance}} </small>
+      </div>
+    </div>
+  </div>
+</div>

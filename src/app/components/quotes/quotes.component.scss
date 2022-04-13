@@ -1,0 +1,8 @@
+.card{
+    margin: 1rem;
+    &:hover{
+        background-color: aquamarine;
+        cursor: pointer;
+        font-size: 1.5rem;
+    }
+}

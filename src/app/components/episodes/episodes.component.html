@@ -1,0 +1,14 @@
+<app-spinner [isMostrar]="isCargando" [texto]="'Recuperando informacion'" *ngIf="listEpisodes.length===0" ></app-spinner>
+
+<div class="row mt-2">
+    <div class="col-sm-2  d-flex justify-content-evenly align-items-center mb-2" *ngFor="let episode of listEpisodes">
+        <div class="card" [ngClass]="{'breakingBad':episode.series==='Breaking Bad','betterCallSaul':episode.series==='Better Call Saul'}">
+            <div class="card-body">
+                <span>{{episode.title}}</span> <br>
+                <span>Temporada:{{episode.season}} </span> <br>
+                <span>Emision: {{episode.air_date}}</span> <br>
+                <span>Pertenece a: {{episode.series}}</span>
+            </div>
+        </div>
+    </div>
+</div>
